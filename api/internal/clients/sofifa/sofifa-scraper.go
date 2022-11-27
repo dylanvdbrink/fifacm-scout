@@ -158,7 +158,7 @@ func GetPlayersAndTeams(databaseId uint) ([]models.Player, map[int]models.Team, 
 
 		c.OnScraped(func(r *colly.Response) {
 			if pageAmount == 60 {
-				log.Println("amount was exactly 60, increasing offset for next batch")
+				log.Println("amount was 60, increasing offset for next batch")
 				offset = offset + 60
 			} else {
 				log.Println("amount was less than 60, that means end was reached")
