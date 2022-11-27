@@ -12,6 +12,6 @@ jobs:
 
     steps:
     - uses: actions/checkout@v3
-    - run: cd api
     - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag dylanvdbrink/fifacm-api:$(date +%s) --tag dylanvdbrink/fifacm-api:latest
+      working-directory: ./api
+      run: docker build . --tag dylanvdbrink/fifacm-api:$(date +%s) --tag dylanvdbrink/fifacm-api:latest
