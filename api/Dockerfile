@@ -21,4 +21,4 @@ COPY --from=build /usr/src/app/dist/scout-scraper /app
 
 EXPOSE 8080
 
-CMD ["/app/scout-api"]
+CMD /app/scout-api
