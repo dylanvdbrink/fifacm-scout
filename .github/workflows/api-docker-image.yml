@@ -1,0 +1,17 @@
+name: API Docker Image
+
+on:
+  push:
+    branches: [ "main" ]
+    paths:
+      - 'api/**'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+    - run: cd api
+    - name: Build the Docker image
+      run: docker build . --file Dockerfile --tag dylanvdbrink/fifacm-api:$(date +%s) --tag dylanvdbrink/fifacm-api:latest
