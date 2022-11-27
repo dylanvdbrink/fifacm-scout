@@ -16,3 +16,6 @@ jobs:
     - name: Build the Docker image
       working-directory: ./api
       run: docker build . --tag dylanvdbrink/fifacm-api:$(date +%s) --tag dylanvdbrink/fifacm-api:latest
+    - name: Push the Docker image
+      working-directory: ./api
+      run: docker image push --all-tags dylanvdbrink/fifacm-api
